@@ -138,8 +138,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"AddPlayer"])
-    {
+    if ([segue.identifier isEqualToString:@"AddPlayer"]) {
         UINavigationController * nc = segue.destinationViewController;
         STPlayerDetailViewController * pdvc = [nc viewControllers][0];
         pdvc.delegate = self;
