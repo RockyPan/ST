@@ -48,6 +48,7 @@
 		5C0AC22D193B1EE70086BADE /* STPlayersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC22C193B1EE70086BADE /* STPlayersTableViewController.m */; };
 		5C0AC230193B1F980086BADE /* STPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC22F193B1F980086BADE /* STPlayer.m */; };
 		5C0AC233193B2D4D0086BADE /* STPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC232193B2D4D0086BADE /* STPlayerCell.m */; };
+		A82788FE193CA641002892A7 /* STPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82788FD193CA641002892A7 /* STPlayerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,8 +109,10 @@
 		5C0AC22C193B1EE70086BADE /* STPlayersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayersTableViewController.m; sourceTree = "<group>"; };
 		5C0AC22E193B1F980086BADE /* STPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayer.h; sourceTree = "<group>"; };
 		5C0AC22F193B1F980086BADE /* STPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayer.m; sourceTree = "<group>"; };
-		5C0AC231193B2D4D0086BADE /* STPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayerCell.h; sourceTree = "<group>"; };
-		5C0AC232193B2D4D0086BADE /* STPlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayerCell.m; sourceTree = "<group>"; };
+		5C0AC231193B2D4D0086BADE /* STPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayerCell.h; sourceTree = SOURCE_ROOT; };
+		5C0AC232193B2D4D0086BADE /* STPlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayerCell.m; sourceTree = SOURCE_ROOT; };
+		A82788FC193CA641002892A7 /* STPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayerDetailViewController.h; sourceTree = "<group>"; };
+		A82788FD193CA641002892A7 /* STPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayerDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +142,6 @@
 		5C0AC1B9193B0CCF0086BADE = {
 			isa = PBXGroup;
 			children = (
-				5C0AC231193B2D4D0086BADE /* STPlayerCell.h */,
-				5C0AC232193B2D4D0086BADE /* STPlayerCell.m */,
 				5C0AC1CB193B0CCF0086BADE /* ST */,
 				5C0AC1EA193B0CCF0086BADE /* STTests */,
 				5C0AC1C4193B0CCF0086BADE /* Frameworks */,
@@ -171,6 +172,8 @@
 		5C0AC1CB193B0CCF0086BADE /* ST */ = {
 			isa = PBXGroup;
 			children = (
+				5C0AC231193B2D4D0086BADE /* STPlayerCell.h */,
+				5C0AC232193B2D4D0086BADE /* STPlayerCell.m */,
 				5C0AC22B193B1EE70086BADE /* STPlayersTableViewController.h */,
 				5C0AC22E193B1F980086BADE /* STPlayer.h */,
 				5C0AC22F193B1F980086BADE /* STPlayer.m */,
@@ -178,6 +181,8 @@
 				5C0AC1D4193B0CCF0086BADE /* STAppDelegate.h */,
 				5C0AC1D5193B0CCF0086BADE /* STAppDelegate.m */,
 				5C0AC1D7193B0CCF0086BADE /* Main.storyboard */,
+				A82788FC193CA641002892A7 /* STPlayerDetailViewController.h */,
+				A82788FD193CA641002892A7 /* STPlayerDetailViewController.m */,
 				5C0AC1DA193B0CCF0086BADE /* STViewController.h */,
 				5C0AC1DB193B0CCF0086BADE /* STViewController.m */,
 				5C0AC1DD193B0CCF0086BADE /* Images.xcassets */,
@@ -375,6 +380,7 @@
 				5C0AC230193B1F980086BADE /* STPlayer.m in Sources */,
 				5C0AC1D6193B0CCF0086BADE /* STAppDelegate.m in Sources */,
 				5C0AC22D193B1EE70086BADE /* STPlayersTableViewController.m in Sources */,
+				A82788FE193CA641002892A7 /* STPlayerDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +585,7 @@
 				5C0AC1F6193B0CCF0086BADE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C0AC1F7193B0CCF0086BADE /* Build configuration list for PBXNativeTarget "STTests" */ = {
 			isa = XCConfigurationList;
@@ -587,6 +594,7 @@
 				5C0AC1F9193B0CCF0086BADE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

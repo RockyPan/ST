@@ -1,20 +1,18 @@
 //
-//  STPlayersTableViewController.m
+//  STPlayerDetailViewController.m
 //  ST
 //
-//  Created by PanKyle on 14-6-1.
+//  Created by PanKyle on 14-6-2.
 //  Copyright (c) 2014年 PanKyle. All rights reserved.
 //
 
-#import "STPlayersTableViewController.h"
-#import "STPlayer.h"
-#import "STPlayerCell.h"
+#import "STPlayerDetailViewController.h"
 
-@interface STPlayersTableViewController ()
+@interface STPlayerDetailViewController ()
 
 @end
 
-@implementation STPlayersTableViewController
+@implementation STPlayerDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,36 +44,28 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.players count];
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
 }
 
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    STPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"];
-    STPlayer *player = (self.players)[indexPath.row];
-    cell.name.text = player.name;
-    cell.game.text = player.game;
-    cell.rating.image = [self imageForRating:player.rating];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
     
     return cell;
 }
-
-- (UIImage *) imageForRating:(int)rating
-{
-    switch (rating) {
-        case 1: return [UIImage imageNamed:@"1StarSmall"]; 
-        case 2: return [UIImage imageNamed:@"2StarsSmall"];
-        case 3: return [UIImage imageNamed:@"3StarsSmall"];
-        case 4: return [UIImage imageNamed:@"4StarsSmall"];
-        case 5: return [UIImage imageNamed:@"5StarsSmall"];
-    }
-    return nil;
-}
+*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -126,22 +116,14 @@
 }
 */
 
--(void)playerDetailViewControllerDidCancel:(STPlayerDetailViewController *)controller
+-(IBAction)cancel:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate playerDetailViewControllerDidCancel:self];
 }
 
--(void)playerDetailViewControllerDidSave:(STPlayerDetailViewController *)controller
+-(IBAction)done:(id)sender
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate playerDetailViewControllerDidSave:self];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"AddPlayer"]) {
-        UINavigationController * nc = segue.destinationViewController;
-        STPlayerDetailViewController * pdvc = [nc viewControllers][0];
-        pdvc.delegate = self;
-    }
-}
 @end

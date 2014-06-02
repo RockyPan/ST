@@ -8,7 +8,7 @@
         <scene sceneID="0bt-0w-Bj8">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="LIl-dy-HaT" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ifs-Wj-nng">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -72,7 +72,7 @@
                     <navigationItem key="navigationItem" title="Players" id="EZV-T7-BAo">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="RVk-ge-2wA">
                             <connections>
-                                <segue destination="4hR-yS-coq" kind="modal" id="2qK-Ri-Dsn"/>
+                                <segue destination="4hR-yS-coq" kind="modal" identifier="AddPlayer" modalTransitionStyle="crossDissolve" id="2qK-Ri-Dsn"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="642" y="-732"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Player Detail View Controller - Add Player-->
         <scene sceneID="Y1M-VI-u8A">
             <objects>
-                <tableViewController id="LUf-qj-051" sceneMemberID="viewController">
+                <tableViewController id="LUf-qj-051" customClass="STPlayerDetailViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zap-cg-Kgt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,18 @@
                             <outlet property="delegate" destination="LUf-qj-051" id="Rw9-sy-Ujp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="DVa-n7-Fs6"/>
+                    <navigationItem key="navigationItem" title="Add Player" id="DVa-n7-Fs6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wWq-Rd-pmK">
+                            <connections>
+                                <action selector="cancel:" destination="LUf-qj-051" id="duF-Tb-RDa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="caF-O3-SsK">
+                            <connections>
+                                <action selector="done:" destination="LUf-qj-051" id="Nlf-OA-Wjt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x74-et-beX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
