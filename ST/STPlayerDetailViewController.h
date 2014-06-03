@@ -17,6 +17,8 @@
 
 @interface STPlayerDetailViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *detailedLable;
 @property (nonatomic, weak) id<STPlayerDetailViewControllerDelegate> delegate;
 
 -(IBAction)cancel:(id)sender;
