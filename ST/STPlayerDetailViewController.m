@@ -14,6 +14,19 @@
 
 @implementation STPlayerDetailViewController
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        NSLog(@"init PlayerDetailViewController");
+    }
+    return self;
+}
+
+- (void)dealloc
+{
+    NSLog(@"dealloc PlayerDetailViewController");
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -65,7 +78,11 @@
 
 -(IBAction)done:(id)sender
 {
-    [self.delegate playerDetailViewControllerDidSave:self];
+    STPlayer * player = [[STPlayer alloc] init];
+    player.name = self.nameTextField.text;
+    player.game = @"chess";
+    player.rating = 1;
+    [self.delegate playerDetailViewController:self didAddPlayer:player];
 }
 
 @end

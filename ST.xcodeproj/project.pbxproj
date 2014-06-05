@@ -48,6 +48,7 @@
 		5C0AC22D193B1EE70086BADE /* STPlayersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC22C193B1EE70086BADE /* STPlayersTableViewController.m */; };
 		5C0AC230193B1F980086BADE /* STPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC22F193B1F980086BADE /* STPlayer.m */; };
 		5C0AC233193B2D4D0086BADE /* STPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC232193B2D4D0086BADE /* STPlayerCell.m */; };
+		5C0AC238193ECA740086BADE /* STPickGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C0AC237193ECA740086BADE /* STPickGameViewController.m */; };
 		A82788FE193CA641002892A7 /* STPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A82788FD193CA641002892A7 /* STPlayerDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,8 @@
 		5C0AC22F193B1F980086BADE /* STPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayer.m; sourceTree = "<group>"; };
 		5C0AC231193B2D4D0086BADE /* STPlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayerCell.h; sourceTree = SOURCE_ROOT; };
 		5C0AC232193B2D4D0086BADE /* STPlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayerCell.m; sourceTree = SOURCE_ROOT; };
+		5C0AC236193ECA740086BADE /* STPickGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickGameViewController.h; sourceTree = SOURCE_ROOT; };
+		5C0AC237193ECA740086BADE /* STPickGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickGameViewController.m; sourceTree = SOURCE_ROOT; };
 		A82788FC193CA641002892A7 /* STPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPlayerDetailViewController.h; sourceTree = "<group>"; };
 		A82788FD193CA641002892A7 /* STPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPlayerDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +175,8 @@
 		5C0AC1CB193B0CCF0086BADE /* ST */ = {
 			isa = PBXGroup;
 			children = (
+				5C0AC236193ECA740086BADE /* STPickGameViewController.h */,
+				5C0AC237193ECA740086BADE /* STPickGameViewController.m */,
 				5C0AC231193B2D4D0086BADE /* STPlayerCell.h */,
 				5C0AC232193B2D4D0086BADE /* STPlayerCell.m */,
 				5C0AC22B193B1EE70086BADE /* STPlayersTableViewController.h */,
@@ -378,6 +383,7 @@
 				5C0AC233193B2D4D0086BADE /* STPlayerCell.m in Sources */,
 				5C0AC1D2193B0CCF0086BADE /* main.m in Sources */,
 				5C0AC230193B1F980086BADE /* STPlayer.m in Sources */,
+				5C0AC238193ECA740086BADE /* STPickGameViewController.m in Sources */,
 				5C0AC1D6193B0CCF0086BADE /* STAppDelegate.m in Sources */,
 				5C0AC22D193B1EE70086BADE /* STPlayersTableViewController.m in Sources */,
 				A82788FE193CA641002892A7 /* STPlayerDetailViewController.m in Sources */,

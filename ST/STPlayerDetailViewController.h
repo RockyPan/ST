@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "STPlayer.h"
 
 @class STPlayerDetailViewController;
 
 @protocol STPlayerDetailViewControllerDelegate <NSObject>
 - (void)playerDetailViewControllerDidCancel:(STPlayerDetailViewController *)controller;
-- (void)playerDetailViewControllerDidSave:(STPlayerDetailViewController *)controller;
+- (void)playerDetailViewController:(STPlayerDetailViewController *)controller didAddPlayer:(STPlayer *)player;
 @end
 
 @interface STPlayerDetailViewController : UITableViewController

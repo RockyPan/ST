@@ -1,20 +1,22 @@
 //
-//  STPlayersTableViewController.m
+//  STPickGameViewController.m
 //  ST
 //
-//  Created by PanKyle on 14-6-1.
+//  Created by PanKyle on 14-6-4.
 //  Copyright (c) 2014年 PanKyle. All rights reserved.
 //
 
-#import "STPlayersTableViewController.h"
-#import "STPlayer.h"
-#import "STPlayerCell.h"
+#import "STPickGameViewController.h"
 
-@interface STPlayersTableViewController ()
+@interface STPickGameViewController ()
 
 @end
 
-@implementation STPlayersTableViewController
+@implementation STPickGameViewController
+{
+    NSArray * _games;
+    NSUInteger _selectedIndex;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,6 +36,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    _games = @[@"Angry birds", @"chess", @"Russian Roulette", @"Spin the Bottle", @"Texas Hold'em Poker", @"Tic-Tac-Toe"];
+    _selectedIndex = [_games indexOfObject:self.game];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,30 +56,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.players count];
+    return [_games count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    STPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"];
-    STPlayer *player = (self.players)[indexPath.row];
-    cell.name.text = player.name;
-    cell.game.text = player.game;
-    cell.rating.image = [self imageForRating:player.rating];
-    
-    return cell;
-}
-
-- (UIImage *) imageForRating:(int)rating
-{
-    switch (rating) {
-        case 1: return [UIImage imageNamed:@"1StarSmall"]; 
-        case 2: return [UIImage imageNamed:@"2StarsSmall"];
-        case 3: return [UIImage imageNamed:@"3StarsSmall"];
-        case 4: return [UIImage imageNamed:@"4StarsSmall"];
-        case 5: return [UIImage imageNamed:@"5StarsSmall"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GameCell"];
+    cell.textLabel.text = _games[indexPath.row];
+    if (indexPath.row == _selectedIndex) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
-    return nil;
+    return cell;
 }
 
 /*
@@ -115,6 +109,23 @@
 }
 */
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (NSNotFound != _selectedIndex) {
+        UITableViewCell * cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0]];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    _selectedIndex = indexPath.row;
+    
+    [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    self.game = _games[indexPath.row];
+    [self.delegate pickGameViewController:self didSelectGame:self.game];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -126,26 +137,6 @@
 }
 */
 
--(void)playerDetailViewControllerDidCancel:(STPlayerDetailViewController *)controller
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
--(void)playerDetailViewController:(STPlayerDetailViewController *)controller didAddPlayer:(STPlayer *)player
-{
-    [self.players addObject:player];
-    NSIndexPath * indexPath = [NSIndexPath indexPathForRow:([self.players count] - 1) inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"AddPlayer"]) {
-        UINavigationController * nc = segue.destinationViewController;
-        STPlayerDetailViewController * pdvc = [nc viewControllers][0];
-        pdvc.delegate = self;
-    }
-}
 
 @end
