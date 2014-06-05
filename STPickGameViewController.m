@@ -37,7 +37,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    _games = @[@"Angry birds", @"chess", @"Russian Roulette", @"Spin the Bottle", @"Texas Hold'em Poker", @"Tic-Tac-Toe"];
+    _games = @[@"Angry birds", @"Chess", @"Russian Roulette", @"Spin the Bottle", @"Texas Hold'em Poker", @"Tic-Tac-Toe"];
     _selectedIndex = [_games indexOfObject:self.game];
 }
 

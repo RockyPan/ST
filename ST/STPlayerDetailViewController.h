@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "STPlayer.h"
+#import "STPickGameViewController.h"
 
 @class STPlayerDetailViewController;
 
@@ -16,7 +17,7 @@
 - (void)playerDetailViewController:(STPlayerDetailViewController *)controller didAddPlayer:(STPlayer *)player;
 @end
 
-@interface STPlayerDetailViewController : UITableViewController
+@interface STPlayerDetailViewController : UITableViewController <STPicGameViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *detailedLable;
